@@ -30,20 +30,19 @@
  */
 package com.mhschmieder.convertertoolkit.demo;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
+import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
+import com.mhschmieder.guitoolkit.component.TitledVectorizationXPanel;
+import com.mhschmieder.guitoolkit.component.VectorSource;
+import com.mhschmieder.guitoolkit.component.VectorizationPanel;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
-import com.mhschmieder.guitoolkit.component.TitledVectorizationXPanel;
-import com.mhschmieder.guitoolkit.component.VectorSource;
-import com.mhschmieder.guitoolkit.component.VectorizationPanel;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
 
 /**
  * {@code ConverterDemoPanel} is an example panel that shows how to use the

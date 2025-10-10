@@ -30,22 +30,21 @@
  */
 package com.mhschmieder.convertertoolkit.demo;
 
+import com.mhschmieder.convertertoolkit.eps.EpsExportUtilities;
+import com.mhschmieder.convertertoolkit.pdf.PdfExportUtilities;
+import com.mhschmieder.convertertoolkit.svg.SvgExportUtilities;
+import com.mhschmieder.guitoolkit.component.XFrame;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.EventQueue;
 import java.awt.HeadlessException;
 import java.io.File;
-
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-import com.mhschmieder.convertertoolkit.eps.EpsExportUtilities;
-import com.mhschmieder.convertertoolkit.pdf.PdfExportUtilities;
-import com.mhschmieder.convertertoolkit.svg.SvgExportUtilities;
-import com.mhschmieder.guitoolkit.component.XFrame;
 
 /**
  * {@code ConverterDemoFrame} is an example of a Swing-based window that can

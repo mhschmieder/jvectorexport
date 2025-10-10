@@ -30,18 +30,18 @@
  */
 package com.mhschmieder.convertertoolkit.eps;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-
 import com.mhschmieder.epstoolkit.EpsDocument;
 import com.mhschmieder.epstoolkit.graphics.EpsGraphics2D;
 import com.mhschmieder.epstoolkit.graphics.EpsRenderingHints;
 import com.mhschmieder.graphicstoolkit.color.ColorMode;
 import com.mhschmieder.graphicstoolkit.print.PaperConstants;
 import com.mhschmieder.guitoolkit.component.VectorSource;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 /**
  * {@code EpsExportUtilities} is a utility class for methods that export a

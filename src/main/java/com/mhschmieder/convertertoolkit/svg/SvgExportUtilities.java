@@ -30,20 +30,19 @@
  */
 package com.mhschmieder.convertertoolkit.svg;
 
+import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
+import com.mhschmieder.graphicstoolkit.color.ColorMode;
+import com.mhschmieder.graphicstoolkit.print.PaperConstants;
+import com.mhschmieder.guitoolkit.component.VectorSource;
+import org.apache.commons.math3.util.FastMath;
+import org.jfree.graphics2d.svg.SVGGraphics2D;
+import org.jfree.graphics2d.svg.SVGHints;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-
-import org.apache.commons.math3.util.FastMath;
-import org.jfree.graphics2d.svg.SVGGraphics2D;
-import org.jfree.graphics2d.svg.SVGHints;
-
-import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
-import com.mhschmieder.graphicstoolkit.color.ColorMode;
-import com.mhschmieder.graphicstoolkit.print.PaperConstants;
-import com.mhschmieder.guitoolkit.component.VectorSource;
 
 /**
  * {@code SvgExportUtilities} is a utility class for methods that export a

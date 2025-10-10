@@ -30,12 +30,6 @@
  */
 package com.mhschmieder.convertertoolkit.pdf;
 
-import java.awt.geom.Rectangle2D;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-
 import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
 import com.mhschmieder.graphicstoolkit.color.ColorMode;
 import com.mhschmieder.graphicstoolkit.print.PaperConstants;
@@ -44,6 +38,12 @@ import com.orsonpdf.PDFDocument;
 import com.orsonpdf.PDFGraphics2D;
 import com.orsonpdf.PDFHints;
 import com.orsonpdf.Page;
+
+import java.awt.geom.Rectangle2D;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 /**
  * {@code PdfExportUtilities} is a utility class for methods that export a
