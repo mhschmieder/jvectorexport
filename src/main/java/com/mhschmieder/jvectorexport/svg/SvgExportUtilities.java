@@ -28,12 +28,12 @@
  *
  * Project: https://github.com/mhschmieder/convertertoolkit
  */
-package com.mhschmieder.convertertoolkit.svg;
+package com.mhschmieder.jvectorexport.svg;
 
-import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
-import com.mhschmieder.graphicstoolkit.color.ColorMode;
-import com.mhschmieder.graphicstoolkit.print.PaperConstants;
-import com.mhschmieder.guitoolkit.component.VectorSource;
+import com.mhschmieder.jcontrols.component.VectorSource;
+import com.mhschmieder.jgraphics.GraphicsUtilities;
+import com.mhschmieder.jgraphics.color.ColorMode;
+import com.mhschmieder.jgraphics.print.PaperConstants;
 import org.apache.commons.math3.util.FastMath;
 import org.jfree.graphics2d.svg.SVGGraphics2D;
 import org.jfree.graphics2d.svg.SVGHints;

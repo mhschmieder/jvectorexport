@@ -37,4 +37,4 @@
  *
  * @author Mark Schmieder
  */
-package com.mhschmieder.convertertoolkit.eps;
+package com.mhschmieder.jvectorexport.eps;

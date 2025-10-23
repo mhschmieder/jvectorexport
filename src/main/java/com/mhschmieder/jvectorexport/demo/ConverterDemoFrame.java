@@ -28,12 +28,12 @@
  *
  * Project: https://github.com/mhschmieder/convertertoolkit
  */
-package com.mhschmieder.convertertoolkit.demo;
+package com.mhschmieder.jvectorexport.demo;
 
-import com.mhschmieder.convertertoolkit.eps.EpsExportUtilities;
-import com.mhschmieder.convertertoolkit.pdf.PdfExportUtilities;
-import com.mhschmieder.convertertoolkit.svg.SvgExportUtilities;
-import com.mhschmieder.guitoolkit.component.XFrame;
+import com.mhschmieder.jcontrols.component.XFrame;
+import com.mhschmieder.jvectorexport.eps.EpsExportUtilities;
+import com.mhschmieder.jvectorexport.pdf.PdfExportUtilities;
+import com.mhschmieder.jvectorexport.svg.SvgExportUtilities;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;

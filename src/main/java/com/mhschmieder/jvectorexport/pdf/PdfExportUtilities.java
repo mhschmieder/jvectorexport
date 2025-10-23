@@ -28,12 +28,12 @@
  *
  * Project: https://github.com/mhschmieder/convertertoolkit
  */
-package com.mhschmieder.convertertoolkit.pdf;
+package com.mhschmieder.jvectorexport.pdf;
 
-import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
-import com.mhschmieder.graphicstoolkit.color.ColorMode;
-import com.mhschmieder.graphicstoolkit.print.PaperConstants;
-import com.mhschmieder.guitoolkit.component.VectorSource;
+import com.mhschmieder.jcontrols.component.VectorSource;
+import com.mhschmieder.jgraphics.GraphicsUtilities;
+import com.mhschmieder.jgraphics.color.ColorMode;
+import com.mhschmieder.jgraphics.print.PaperConstants;
 import com.orsonpdf.PDFDocument;
 import com.orsonpdf.PDFGraphics2D;
 import com.orsonpdf.PDFHints;

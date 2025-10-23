@@ -28,12 +28,12 @@
  *
  * Project: https://github.com/mhschmieder/convertertoolkit
  */
-package com.mhschmieder.convertertoolkit.demo;
+package com.mhschmieder.jvectorexport.demo;
 
-import com.mhschmieder.graphicstoolkit.color.ColorUtilities;
-import com.mhschmieder.guitoolkit.component.TitledVectorizationXPanel;
-import com.mhschmieder.guitoolkit.component.VectorSource;
-import com.mhschmieder.guitoolkit.component.VectorizationPanel;
+import com.mhschmieder.jcontrols.component.TitledVectorizationXPanel;
+import com.mhschmieder.jcontrols.component.VectorSource;
+import com.mhschmieder.jcontrols.component.VectorizationPanel;
+import com.mhschmieder.jgraphics.color.ColorUtilities;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;

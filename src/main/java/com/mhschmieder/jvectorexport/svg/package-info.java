@@ -29,10 +29,12 @@
  * Project: https://github.com/mhschmieder/convertertoolkit
  */
 /**
- * This package contains a demo app for how to use the ToolkitConverter Library.
+ * This package contains the ConverterToolkit Library's export protocols (via
+ * basic and advanced export interfaces), and utilities for wrapping output
+ * writers with SVG as the targeted device.
  *
  * @version 1.0
  *
  * @author Mark Schmieder
  */
-package com.mhschmieder.convertertoolkit.demo;
+package com.mhschmieder.jvectorexport.svg;

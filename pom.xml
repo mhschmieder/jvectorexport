@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mhschmieder</groupId>
-    <artifactId>convertertoolkit</artifactId>
+    <artifactId>jvectorexport</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>convertertoolkit</name>
-    <url>https://github.com/mhschmieder/convertertoolkit</url>
+    <name>jvectorexport</name>
+    <url>https://github.com/mhschmieder/jvectorexport</url>
     <description>A toolkit for converting Java AWT based graphics to various vector graphics output formats such as EPS, SVG and PDF.</description>  
 
     <licenses>
@@ -21,9 +21,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/mhschmieder/convertertoolkit</url>
-        <connection>scm:git:git://github.com/mhschmieder/convertertoolkit.git</connection>
-        <developerConnection>scm:git:git@github.com:mhschmieder/convertertoolkit.git</developerConnection>
+        <url>https://github.com/mhschmieder/jvectorexport</url>
+        <connection>scm:git:git://github.com/mhschmieder/jvectorexport.git</connection>
+        <developerConnection>scm:git:git@github.com:mhschmieder/jvectorexport.git</developerConnection>
     </scm>
 
     <developers>
@@ -41,19 +41,19 @@
     <dependencies>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>graphicstoolkit</artifactId>
+            <artifactId>jgraphics</artifactId>
             <version>0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>guitoolkit</artifactId>
+            <artifactId>jcontrols</artifactId>
             <version>0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.mhschmieder</groupId>
-            <artifactId>epstoolkit</artifactId>
+            <artifactId>jepswriter</artifactId>
             <version>0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

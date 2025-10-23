@@ -28,14 +28,14 @@
  *
  * Project: https://github.com/mhschmieder/convertertoolkit
  */
-package com.mhschmieder.convertertoolkit.eps;
+package com.mhschmieder.jvectorexport.eps;
 
-import com.mhschmieder.epstoolkit.EpsDocument;
-import com.mhschmieder.epstoolkit.graphics.EpsGraphics2D;
-import com.mhschmieder.epstoolkit.graphics.EpsRenderingHints;
-import com.mhschmieder.graphicstoolkit.color.ColorMode;
-import com.mhschmieder.graphicstoolkit.print.PaperConstants;
-import com.mhschmieder.guitoolkit.component.VectorSource;
+import com.mhschmieder.jcontrols.component.VectorSource;
+import com.mhschmieder.jepswriter.EpsDocument;
+import com.mhschmieder.jepswriter.graphics.EpsGraphics2D;
+import com.mhschmieder.jepswriter.graphics.EpsRenderingHints;
+import com.mhschmieder.jgraphics.color.ColorMode;
+import com.mhschmieder.jgraphics.print.PaperConstants;
 
 import java.io.BufferedWriter;
 import java.io.File;

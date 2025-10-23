@@ -29,12 +29,10 @@
  * Project: https://github.com/mhschmieder/convertertoolkit
  */
 /**
- * This package contains the ConverterToolkit Library's export protocols (via
- * basic and advanced export interfaces), and utilities for wrapping output
- * writers with PDF as the targeted device.
+ * This package contains a demo app for how to use the ToolkitConverter Library.
  *
  * @version 1.0
  *
  * @author Mark Schmieder
  */
-package com.mhschmieder.convertertoolkit.pdf;
+package com.mhschmieder.jvectorexport.demo;
