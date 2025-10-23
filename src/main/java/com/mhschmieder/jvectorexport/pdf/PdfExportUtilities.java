@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2025, Mark Schmieder. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,12 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the ConverterToolkit Library
+ * This file is part of the jvectorexport Library
  *
  * You should have received a copy of the MIT License along with the
- * ConverterToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * jvectorexport Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/convertertoolkit
+ * Project: https://github.com/mhschmieder/jvectorexport
  */
 package com.mhschmieder.jvectorexport.pdf;
 
@@ -93,16 +93,16 @@ public class PdfExportUtilities {
         // (1/72 inch) but it is common to specify Letter Size and then convert.
         final double pageWidth = PaperConstants.NA_LETTER_WIDTH_POINTS;
         final double pageHeight = PaperConstants.NA_LETTER_HEIGHT_POINTS;
-        final boolean fileSaved = createDocument( file,
-                                                  component,
-                                                  title,
-                                                  author,
-                                                  pageWidth,
-                                                  pageHeight,
-                                                  ColorMode.RGB,
-                                                  true );
 
-        return fileSaved;
+        return createDocument(
+                file,
+                component,
+                title,
+                author,
+                pageWidth,
+                pageHeight,
+                ColorMode.RGB,
+                true );
     }
 
     /**
