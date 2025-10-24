@@ -31,7 +31,7 @@
 package com.mhschmieder.jvectorexport.demo;
 
 import com.mhschmieder.jcontrols.component.TitledVectorizationXPanel;
-import com.mhschmieder.jcontrols.component.VectorSource;
+import com.mhschmieder.jcontrols.util.VectorSource;
 import com.mhschmieder.jcontrols.component.VectorizationPanel;
 import com.mhschmieder.jgraphics.color.ColorUtilities;
 
