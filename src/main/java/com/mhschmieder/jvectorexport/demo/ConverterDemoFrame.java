@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.jvectorexport.demo;
 
-import com.mhschmieder.jcontrols.frame.XFrame;
+import com.marineacoustics.jgui.frame.XFrame;
 import com.mhschmieder.jvectorexport.eps.EpsExportUtilities;
 import com.mhschmieder.jvectorexport.pdf.PdfExportUtilities;
 import com.mhschmieder.jvectorexport.svg.SvgExportUtilities;
@@ -346,5 +346,4 @@ public final class ConverterDemoFrame extends XFrame {
         // Forward this method to the subcomponents.
         converterDemoPanel.setForegroundFromBackground( backColor );
     }
-
 }

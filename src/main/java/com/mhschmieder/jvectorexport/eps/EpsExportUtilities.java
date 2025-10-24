@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.jvectorexport.eps;
 
-import com.mhschmieder.jcontrols.util.VectorSource;
+import com.marineacoustics.jgui.util.VectorSource;
 import com.mhschmieder.jepswriter.EpsDocument;
 import com.mhschmieder.jepswriter.graphics.EpsGraphics2D;
 import com.mhschmieder.jepswriter.graphics.EpsRenderingHints;

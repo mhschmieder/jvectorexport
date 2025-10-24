@@ -69,6 +69,12 @@
             <version>3.4.3</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.mhschmieder</groupId>
+            <artifactId>jgui</artifactId>
+            <version>0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

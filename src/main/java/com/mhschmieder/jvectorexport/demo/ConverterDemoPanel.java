@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.jvectorexport.demo;
 
-import com.mhschmieder.jcontrols.component.TitledVectorizationXPanel;
-import com.mhschmieder.jcontrols.util.VectorSource;
-import com.mhschmieder.jcontrols.component.VectorizationPanel;
+import com.marineacoustics.jgui.component.TitledVectorizationXPanel;
+import com.marineacoustics.jgui.component.VectorizationPanel;
+import com.marineacoustics.jgui.util.VectorSource;
 import com.mhschmieder.jgraphics.color.ColorUtilities;
 
 import javax.swing.BorderFactory;
