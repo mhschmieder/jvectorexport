@@ -46,7 +46,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 /**
- * {@code PdfExportUtilities} is a utility class for methods that export a
+ * {@code PdfReportUtilities} is a utility class for methods that export a
  * {@link VectorSource} implementing component or object to a PDF Document
  * using a custom PDF-specific wrapper for AWT's {@code Graphics2d} class.
  *
@@ -54,12 +54,12 @@ import java.io.OutputStream;
  *
  * @author Mark Schmieder
  */
-public class PdfExportUtilities {
+public class PdfReportUtilities {
 
     /**
      * The default constructor is disabled, as this is a static utilities class.
      */
-    private PdfExportUtilities() {}
+    private PdfReportUtilities() {}
 
     /**
      * Creates the PDF Document corresponding to the {@link VectorSource}, and

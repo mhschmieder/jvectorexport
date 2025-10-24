@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2025, Mark Schmieder. All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,18 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the ConverterToolkit Library
+ * This file is part of the jvectorexport Library
  *
  * You should have received a copy of the MIT License along with the
- * ConverterToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * jvectorexport Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/convertertoolkit
+ * Project: https://github.com/mhschmieder/jvectorexport
  */
 package com.mhschmieder.jvectorexport.demo;
 
 import com.marineacoustics.jgui.frame.XFrame;
 import com.mhschmieder.jvectorexport.eps.EpsExportUtilities;
-import com.mhschmieder.jvectorexport.pdf.PdfExportUtilities;
+import com.mhschmieder.jvectorexport.pdf.PdfReportUtilities;
 import com.mhschmieder.jvectorexport.svg.SvgExportUtilities;
 
 import javax.swing.JButton;
@@ -160,12 +160,12 @@ public final class ConverterDemoFrame extends XFrame {
     private void initFrame() {
         // Add quick-and-dirty buttons just to test the export feature.
         final JButton epsExportButton = new JButton( "Export to EPS" ); //$NON-NLS-1$
-        final JButton pdfExportButton = new JButton( "Export to PDF" ); //$NON-NLS-1$
+        final JButton pdfreportButton = new JButton( "Export to PDF" ); //$NON-NLS-1$
         final JButton svgExportButton = new JButton( "Export to SVG" ); //$NON-NLS-1$
         final JPanel exportPanel = new JPanel();
         exportPanel.setLayout( new BorderLayout( 10, 10 ) );
         exportPanel.add( epsExportButton, BorderLayout.WEST );
-        exportPanel.add( pdfExportButton, BorderLayout.CENTER );
+        exportPanel.add( pdfreportButton, BorderLayout.CENTER );
         exportPanel.add( svgExportButton, BorderLayout.EAST );
 
         // Make the primary layout element, and add it to the content pane.
@@ -193,7 +193,7 @@ public final class ConverterDemoFrame extends XFrame {
         } );
 
         // Add a listener for the Export PDF action button.
-        pdfExportButton.addActionListener( e -> {
+        pdfreportButton.addActionListener( e -> {
             // This is a very basic example, as I exclusively do JavaFX at the
             // app-level by now, with only a few legacy panels still written in
             // Swing, so I no longer have working infrastructure for the old
@@ -320,10 +320,8 @@ public final class ConverterDemoFrame extends XFrame {
         // either be queried per export action, or grabbed from the current Page
         // Setup attributes. There are no limits on allowed values; units are
         // points (1/72 inch) and we default to North American Letter size here.
-        final boolean fileSaved = PdfExportUtilities
+        return PdfReportUtilities
                 .createDocument( file, converterDemoPanel, title, author );
-
-        return fileSaved;
     }
 
     //////////////////////// XFrame method overrides /////////////////////////
