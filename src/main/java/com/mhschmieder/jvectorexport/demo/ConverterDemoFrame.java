@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.jvectorexport.demo;
 
-import com.marineacoustics.jgui.frame.XFrame;
+import com.mhschmieder.jgui.frame.XFrame;
 import com.mhschmieder.jvectorexport.eps.EpsExportUtilities;
 import com.mhschmieder.jvectorexport.pdf.PdfReportUtilities;
 import com.mhschmieder.jvectorexport.svg.SvgExportUtilities;

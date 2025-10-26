@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.jvectorexport.svg;
 
-import com.marineacoustics.jgui.util.VectorSource;
 import com.mhschmieder.jgraphics.GraphicsUtilities;
 import com.mhschmieder.jgraphics.color.ColorMode;
 import com.mhschmieder.jgraphics.print.PaperConstants;
+import com.mhschmieder.jgui.util.VectorSource;
 import org.apache.commons.math3.util.FastMath;
 import org.jfree.graphics2d.svg.SVGGraphics2D;
 import org.jfree.graphics2d.svg.SVGHints;

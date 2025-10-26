@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.jvectorexport.pdf;
 
-import com.marineacoustics.jgui.util.VectorSource;
 import com.mhschmieder.jgraphics.GraphicsUtilities;
 import com.mhschmieder.jgraphics.color.ColorMode;
 import com.mhschmieder.jgraphics.print.PaperConstants;
+import com.mhschmieder.jgui.util.VectorSource;
 import com.orsonpdf.PDFDocument;
 import com.orsonpdf.PDFGraphics2D;
 import com.orsonpdf.PDFHints;

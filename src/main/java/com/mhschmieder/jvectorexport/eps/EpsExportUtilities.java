@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.jvectorexport.eps;
 
-import com.marineacoustics.jgui.util.VectorSource;
 import com.mhschmieder.jepswriter.EpsDocument;
 import com.mhschmieder.jepswriter.graphics.EpsGraphics2D;
 import com.mhschmieder.jepswriter.graphics.EpsRenderingHints;
 import com.mhschmieder.jgraphics.color.ColorMode;
 import com.mhschmieder.jgraphics.print.PaperConstants;
+import com.mhschmieder.jgui.util.VectorSource;
 
 import java.io.BufferedWriter;
 import java.io.File;
