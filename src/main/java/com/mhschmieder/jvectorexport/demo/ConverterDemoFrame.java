@@ -30,7 +30,7 @@
  */
 package com.mhschmieder.jvectorexport.demo;
 
-import com.mhschmieder.jgui.frame.XFrame;
+import com.mhschmieder.jgui.frame.JxFrame;
 import com.mhschmieder.jvectorexport.eps.EpsExportUtilities;
 import com.mhschmieder.jvectorexport.pdf.PdfReportUtilities;
 import com.mhschmieder.jvectorexport.svg.SvgExportUtilities;
@@ -82,7 +82,7 @@ import java.io.File;
  *
  * @author Mark Schmieder
  */
-public final class ConverterDemoFrame extends XFrame {
+public final class ConverterDemoFrame extends JxFrame {
     /**
      * Unique Serial Version ID for this class, to avoid class loader conflicts.
      */
@@ -113,10 +113,10 @@ public final class ConverterDemoFrame extends XFrame {
     }
 
     /**
-     * This {@link ConverterDemoPanel} mostly just contains the primary layout
+     * This {@link ConverterDemoTitledVectorizationPanel} mostly just contains the primary layout
      * element, apart from the menus and tool bars.
      */
-    protected ConverterDemoPanel converterDemoPanel;
+    protected ConverterDemoTitledVectorizationPanel converterDemoPanel;
 
     //////////////////////////// Constructors ////////////////////////////////
 
@@ -172,7 +172,7 @@ public final class ConverterDemoFrame extends XFrame {
         //
         // This code will be refactored once the XFrame class is completed, so
         // that this work is done in an override method rather than here.
-        converterDemoPanel = new ConverterDemoPanel();
+        converterDemoPanel = new ConverterDemoTitledVectorizationPanel();
         final Container contentPane = getContentPane();
         contentPane.setLayout( new BorderLayout( 10, 10 ) );
         contentPane.add( exportPanel, BorderLayout.NORTH );

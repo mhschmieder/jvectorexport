@@ -31,8 +31,8 @@
 package com.mhschmieder.jvectorexport.demo;
 
 import com.mhschmieder.jgraphics.color.ColorUtilities;
-import com.mhschmieder.jgui.component.TitledVectorizationXPanel;
-import com.mhschmieder.jgui.component.VectorizationPanel;
+import com.mhschmieder.jgui.layout.JxTitledVectorizationPanel;
+import com.mhschmieder.jgui.layout.VectorizationPanel;
 import com.mhschmieder.jgui.util.VectorSource;
 
 import javax.swing.BorderFactory;
@@ -47,7 +47,7 @@ import java.awt.Graphics2D;
 /**
  * {@code ConverterDemoPanel} is an example panel that shows how to use the
  * implementation methods that are contracted by the {@link VectorSource}
- * interface as implemented in the example {@link TitledVectorizationXPanel}
+ * interface as implemented in the example {@link JxTitledVectorizationPanel}
  * parent class provided here. It is a more detailed example that shows how to
  * composite multiple sub-panels into the same page layout and
  * {@link Graphics2D} derived Graphics Context, thus avoiding multi-threading.
@@ -56,7 +56,7 @@ import java.awt.Graphics2D;
  *
  * @author Mark Schmieder
  */
-public final class ConverterDemoPanel extends TitledVectorizationXPanel {
+public final class ConverterDemoTitledVectorizationPanel extends JxTitledVectorizationPanel {
     /**
      * Unique Serial Version ID for this class, to avoid class loader conflicts.
      */
@@ -95,7 +95,7 @@ public final class ConverterDemoPanel extends TitledVectorizationXPanel {
      *
      * @since 1.0
      */
-    public ConverterDemoPanel() {
+    public ConverterDemoTitledVectorizationPanel() {
         // Always call the superclass constructor first!
         super();
 
