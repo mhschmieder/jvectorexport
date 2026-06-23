@@ -21,22 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the ConverterToolkit Library
+ * This file is part of the jvectorexport Library
  *
  * You should have received a copy of the MIT License along with the
- * ConverterToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * jvectorexport Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/convertertoolkit
+ * Project: https://github.com/mhschmieder/jvectorexport
  */
 package com.mhschmieder.jvectorexport.svg;
 
-import com.mhschmieder.jgraphics.GraphicsUtilities;
+import com.mhschmieder.jgraphics.util.GraphicsUtilities;
 import com.mhschmieder.jgraphics.color.ColorMode;
 import com.mhschmieder.jgraphics.print.PaperConstants;
 import com.mhschmieder.jgui.util.VectorSource;
 import org.apache.commons.math3.util.FastMath;
-import org.jfree.graphics2d.svg.SVGGraphics2D;
-import org.jfree.graphics2d.svg.SVGHints;
+import org.jfree.svg.SVGGraphics2D;
+import org.jfree.svg.SVGHints;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -229,7 +229,8 @@ public final class SvgExportUtilities {
         final Object textRenderingHint = useVectorizedText
             ? SVGHints.VALUE_DRAW_STRING_TYPE_VECTOR
             : SVGHints.VALUE_DRAW_STRING_TYPE_STANDARD;
-        svgGraphics.setRenderingHint( SVGHints.KEY_DRAW_STRING_TYPE, textRenderingHint );
+        svgGraphics.setRenderingHint(
+                SVGHints.KEY_DRAW_STRING_TYPE, textRenderingHint );
 
         // Make a default Title if none was provided, or if empty.
         final String svgTitle =

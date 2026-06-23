@@ -21,12 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the ConverterToolkit Library
+ * This file is part of the jvectorexport Library
  *
  * You should have received a copy of the MIT License along with the
- * ConverterToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * jvectorexport Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/convertertoolkit
+ * Project: https://github.com/mhschmieder/jvectorexport
  */
 package com.mhschmieder.jvectorexport.eps;
 

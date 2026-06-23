@@ -28,13 +28,16 @@
  *
  * Project: https://github.com/mhschmieder/jvectorexport
  */
-/**
- * This package contains the jvectorexport Library's export protocols (via
- * basic and advanced export interfaces), and utilities for wrapping output
- * writers with PDF as the targeted device.
- *
- * @version 1.0
- *
- * @author Mark Schmieder
- */
-package com.mhschmieder.jvectorexport.pdf;
+module jvectorexport {
+    exports com.mhschmieder.jvectorexport.demo;
+    exports com.mhschmieder.jvectorexport.eps;
+    exports com.mhschmieder.jvectorexport.pdf;
+    exports com.mhschmieder.jvectorexport.svg;
+    requires commons.math3;
+    requires java.desktop;
+    requires jepswriter;
+    requires jgraphics;
+    requires jgui;
+    requires org.jfree.pdf;
+    requires org.jfree.svg;
+}

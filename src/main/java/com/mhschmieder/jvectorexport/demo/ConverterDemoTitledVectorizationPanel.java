@@ -21,12 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  *
- * This file is part of the ConverterToolkit Library
+ * This file is part of the jvectorexport Library
  *
  * You should have received a copy of the MIT License along with the
- * ConverterToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
+ * jvectorexport Library. If not, see <https://opensource.org/licenses/MIT>.
  *
- * Project: https://github.com/mhschmieder/convertertoolkit
+ * Project: https://github.com/mhschmieder/jvectorexport
  */
 package com.mhschmieder.jvectorexport.demo;
 
@@ -56,7 +56,8 @@ import java.awt.Graphics2D;
  *
  * @author Mark Schmieder
  */
-public final class ConverterDemoTitledVectorizationPanel extends JxTitledVectorizationPanel {
+public final class ConverterDemoTitledVectorizationPanel
+        extends JxTitledVectorizationPanel {
     /**
      * Unique Serial Version ID for this class, to avoid class loader conflicts.
      */

@@ -30,14 +30,14 @@
  */
 package com.mhschmieder.jvectorexport.pdf;
 
-import com.mhschmieder.jgraphics.GraphicsUtilities;
+import com.mhschmieder.jgraphics.util.GraphicsUtilities;
 import com.mhschmieder.jgraphics.color.ColorMode;
 import com.mhschmieder.jgraphics.print.PaperConstants;
 import com.mhschmieder.jgui.util.VectorSource;
-import com.orsonpdf.PDFDocument;
-import com.orsonpdf.PDFGraphics2D;
-import com.orsonpdf.PDFHints;
-import com.orsonpdf.Page;
+import org.jfree.pdf.PDFDocument;
+import org.jfree.pdf.PDFGraphics2D;
+import org.jfree.pdf.PDFHints;
+import org.jfree.pdf.Page;
 
 import java.awt.geom.Rectangle2D;
 import java.io.BufferedOutputStream;
@@ -225,8 +225,8 @@ public class PdfReportUtilities {
         document.setAuthor( author );
 
         // Create a new PDF Page, and add it to the PDF Document.
-        final Page page = document
-                .createPage( new Rectangle2D.Double( 0.0d, 0.0d, pageWidth, pageHeight ) );
+        final Page page = document.createPage( new Rectangle2D.Double(
+                0.0d, 0.0d, pageWidth, pageHeight ) );
 
         // Get the Graphics Context wrapper for drawing the PDF content.
         final PDFGraphics2D pdfGraphics = page.getGraphics2D();
@@ -236,12 +236,13 @@ public class PdfReportUtilities {
         final Object textRenderingHint = useVectorizedText
             ? PDFHints.VALUE_DRAW_STRING_TYPE_VECTOR
             : PDFHints.VALUE_DRAW_STRING_TYPE_STANDARD;
-        pdfGraphics.setRenderingHint( PDFHints.KEY_DRAW_STRING_TYPE, textRenderingHint );
+        pdfGraphics.setRenderingHint(
+                PDFHints.KEY_DRAW_STRING_TYPE, textRenderingHint );
 
-        // Calculate and apply a global transform for all of the AWT transcoding
+        // Calculate and apply a global transform for all the AWT transcoding
         // from source coordinates to PDF-oriented page coordinates.
         //
-        // PDF starts at the bottom left corner, like EPS and PostScript.
+        // PDF starts in the bottom left corner, like EPS and PostScript.
         GraphicsUtilities.applySourceToDestinationTransform( pdfGraphics,
                                                              minX,
                                                              minY,
@@ -266,5 +267,4 @@ public class PdfReportUtilities {
 
         return fileSaved;
     }
-
 }
