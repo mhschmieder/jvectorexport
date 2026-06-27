@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.jvectorexport.pdf;
 
-import com.mhschmieder.jgraphics.util.GraphicsUtilities;
 import com.mhschmieder.jgraphics.color.ColorMode;
 import com.mhschmieder.jgraphics.print.PaperConstants;
+import com.mhschmieder.jgraphics.util.GraphicsUtilities;
 import com.mhschmieder.jgui.util.VectorSource;
 import org.jfree.pdf.PDFDocument;
 import org.jfree.pdf.PDFGraphics2D;

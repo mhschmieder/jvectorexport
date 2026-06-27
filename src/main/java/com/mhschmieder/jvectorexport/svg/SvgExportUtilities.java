@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.jvectorexport.svg;
 
-import com.mhschmieder.jgraphics.util.GraphicsUtilities;
 import com.mhschmieder.jgraphics.color.ColorMode;
 import com.mhschmieder.jgraphics.print.PaperConstants;
+import com.mhschmieder.jgraphics.util.GraphicsUtilities;
 import com.mhschmieder.jgui.util.VectorSource;
 import org.apache.commons.math3.util.FastMath;
 import org.jfree.svg.SVGGraphics2D;
