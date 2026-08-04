@@ -35,14 +35,15 @@ import com.mhschmieder.jgui.layout.JxTitledVectorizationPanel;
 import com.mhschmieder.jgui.layout.VectorizationPanel;
 import com.mhschmieder.jgui.util.VectorSource;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
 
 /**
  * {@code ConverterDemoPanel} is an example panel that shows how to use the
@@ -52,16 +53,16 @@ import java.awt.Graphics2D;
  * composite multiple sub-panels into the same page layout and
  * {@link Graphics2D} derived Graphics Context, thus avoiding multi-threading.
  *
- * @version 1.0
- *
  * @author Mark Schmieder
+ * @version 1.0
  */
 public final class ConverterDemoTitledVectorizationPanel
         extends JxTitledVectorizationPanel {
     /**
-     * Unique Serial Version ID for this class, to avoid class loader conflicts.
+     * Unique Serial Version ID for this class, to avoid class loader
+     * conflicts.
      */
-    private static final long    serialVersionUID = 1763104890145442760L;
+    private static final long serialVersionUID = 1763104890145442760L;
 
     /**
      * The top panel is an example of simple content for a layout region that
@@ -74,7 +75,7 @@ public final class ConverterDemoTitledVectorizationPanel
      * bottom left and bottom right content panels. It cannot be vectorized as
      * only its children have actual content. It supplies padding and spacing.
      */
-    protected JPanel             bottomPanel;
+    protected JPanel bottomPanel;
 
     /**
      * The bottom left panel is an example of simple content for a layout region
@@ -118,7 +119,7 @@ public final class ConverterDemoTitledVectorizationPanel
      *
      * @since 1.0
      */
-    @SuppressWarnings("nls")
+    @SuppressWarnings( "nls" )
     private void initPanel() {
         // Make three labels to display in an asymmetric grid, as an example of
         // typical application panel layouts that will need to export to vector
@@ -149,24 +150,36 @@ public final class ConverterDemoTitledVectorizationPanel
         // Line up the "Cruel" label and the "Yes" check box top-to-bottom in
         // the bottom left panel using a Box Layout.
         bottomLeftPanel = new VectorizationPanel();
-        bottomLeftPanel.setLayout( new BoxLayout( bottomLeftPanel, BoxLayout.PAGE_AXIS ) );
-        bottomLeftPanel.setBorder( BorderFactory.createEmptyBorder( 10, 10, 10, 10 ) );
+        bottomLeftPanel.setLayout( new BoxLayout( bottomLeftPanel,
+                                                  BoxLayout.PAGE_AXIS ) );
+        bottomLeftPanel.setBorder( BorderFactory.createEmptyBorder( 10,
+                                                                    10,
+                                                                    10,
+                                                                    10 ) );
         bottomLeftPanel.add( cruelLabel );
         bottomLeftPanel.add( yesCheckBox );
 
         // Line up the "World" label and the "No" check box top-to-bottom in the
         // bottom right panel using a Box Layout.
         bottomRightPanel = new VectorizationPanel();
-        bottomRightPanel.setLayout( new BoxLayout( bottomRightPanel, BoxLayout.PAGE_AXIS ) );
-        bottomRightPanel.setBorder( BorderFactory.createEmptyBorder( 10, 10, 10, 10 ) );
+        bottomRightPanel.setLayout( new BoxLayout( bottomRightPanel,
+                                                   BoxLayout.PAGE_AXIS ) );
+        bottomRightPanel.setBorder( BorderFactory.createEmptyBorder( 10,
+                                                                     10,
+                                                                     10,
+                                                                     10 ) );
         bottomRightPanel.add( worldLabel );
         bottomRightPanel.add( noCheckBox );
 
         // Line up the bottom left and bottom right panels side-by-side in the
         // bottom panel container using a Box Layout.
         bottomPanel = new JPanel();
-        bottomPanel.setLayout( new BoxLayout( bottomPanel, BoxLayout.LINE_AXIS ) );
-        bottomPanel.setBorder( BorderFactory.createEmptyBorder( 10, 10, 10, 10 ) );
+        bottomPanel.setLayout( new BoxLayout( bottomPanel,
+                                              BoxLayout.LINE_AXIS ) );
+        bottomPanel.setBorder( BorderFactory.createEmptyBorder( 10,
+                                                                10,
+                                                                10,
+                                                                10 ) );
         bottomPanel.add( bottomLeftPanel );
         bottomPanel.add( bottomRightPanel );
 
@@ -196,11 +209,9 @@ public final class ConverterDemoTitledVectorizationPanel
      * draw from in a future release, from some other export projects we have
      * worked on. Some compositors handle this with two separate "cursors".
      *
-     * @param graphicsContext
-     *            The {@link Graphics2D} Graphics Context for vectorizing the
-     *            content of this panel
+     * @param graphicsContext The {@link Graphics2D} Graphics Context for
+     *                        vectorizing the content of this panel
      * @return {@code true} if the export succeeded; {@code false} if it failed
-     *
      * @since 1.0
      */
     @Override
@@ -229,7 +240,8 @@ public final class ConverterDemoTitledVectorizationPanel
             final int titleOffsetY = getTitleOffsetY();
             final int titleAdjustmentY = titleOffsetY + TITLE_PADDING_BOTTOM;
             final int topPanelHeight = topPanel.getHeight();
-            graphicsContext.translate( 0, topPanelHeight + titleAdjustmentY + 20 );
+            graphicsContext.translate( 0,
+                                       topPanelHeight + titleAdjustmentY + 20 );
             panelExported = bottomLeftPanel.vectorize( graphicsContext );
             if ( panelExported ) {
                 // Adjust the position of the bottom right panel's export on the
@@ -257,9 +269,8 @@ public final class ConverterDemoTitledVectorizationPanel
      * and where appropriate, uses it to set an appropriate foreground color to
      * complement for text-based components as well as line graphics.
      *
-     * @param backColor
-     *            The current background color to apply to the layout hierarchy
-     *
+     * @param backColor The current background color to apply to the layout
+     *                  hierarchy
      * @since 1.0
      */
     @Override
@@ -268,7 +279,8 @@ public final class ConverterDemoTitledVectorizationPanel
         super.setForegroundFromBackground( backColor );
 
         // Make sure the foreground color is never masked by the background.
-        final Color foreColor = ColorUtilities.getForegroundFromBackground( backColor );
+        final Color foreColor = ColorUtilities.getForegroundFromBackground(
+                backColor );
 
         // Forward this method to the subcomponents.
         topPanel.setBackground( backColor );
@@ -286,5 +298,4 @@ public final class ConverterDemoTitledVectorizationPanel
         // Any change to background requires regenerating the off-screen buffer.
         regenerateOffScreenImage = true;
     }
-
 }

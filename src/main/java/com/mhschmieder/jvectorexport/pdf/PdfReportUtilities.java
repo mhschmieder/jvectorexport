@@ -47,41 +47,40 @@ import java.io.OutputStream;
 
 /**
  * {@code PdfReportUtilities} is a utility class for methods that export a
- * {@link VectorSource} implementing component or object to a PDF Document
- * using a custom PDF-specific wrapper for AWT's {@code Graphics2d} class.
- *
- * @version 1.0
+ * {@link VectorSource} implementing component or object to a PDF Document using
+ * a custom PDF-specific wrapper for AWT's {@code Graphics2d} class.
  *
  * @author Mark Schmieder
+ * @version 1.0
  */
 public class PdfReportUtilities {
 
     /**
-     * The default constructor is disabled, as this is a static utilities class.
+     * The default constructor is disabled, as this is a static utilities
+     * class.
      */
-    private PdfReportUtilities() {}
+    private PdfReportUtilities() {
+    }
 
     /**
      * Creates the PDF Document corresponding to the {@link VectorSource}, and
      * writes it to the provided {@link File}, using UTF-16 encoding due to the
-     * need to handle locale sensitive characters for the PDF Title and content.
+     * need to handle locale sensitive characters for the PDF Title and
+     * content.
      * <p>
-     * This minimally specified entry point defaults to North American Letter
-     * as the target page paper size and orientation, for clients that don't
-     * want to bother specifying it or querying it either from the user or the
+     * This minimally specified entry point defaults to North American Letter as
+     * the target page paper size and orientation, for clients that don't want
+     * to bother specifying it or querying it either from the user or the
      * current Page Layout. It also presumes that RGB output is wanted, and
      * vectorized text (especially so that rotated text is rotated in PDF).
      *
-     * @param file
-     *            The {@link File} destination for writing the PDF content
-     * @param component
-     *            The {@link VectorSource} AWT/Swing component to export to PDF
-     * @param title
-     *            The {@link String} to use as the PDF Document's title
-     * @param author
-     *            The {@link String} to use as the PDF Document's author
+     * @param file      The {@link File} destination for writing the PDF
+     *                  content
+     * @param component The {@link VectorSource} AWT/Swing component to export
+     *                  to PDF
+     * @param title     The {@link String} to use as the PDF Document's title
+     * @param author    The {@link String} to use as the PDF Document's author
      * @return The status of whether PDF Document creation succeeded or not
-     *
      * @since 1.0
      */
     public static boolean createDocument( final File file,
@@ -94,44 +93,41 @@ public class PdfReportUtilities {
         final double pageWidth = PaperConstants.NA_LETTER_WIDTH_POINTS;
         final double pageHeight = PaperConstants.NA_LETTER_HEIGHT_POINTS;
 
-        return createDocument(
-                file,
-                component,
-                title,
-                author,
-                pageWidth,
-                pageHeight,
-                ColorMode.RGB,
-                true );
+        return createDocument( file,
+                               component,
+                               title,
+                               author,
+                               pageWidth,
+                               pageHeight,
+                               ColorMode.RGB,
+                               true );
     }
 
     /**
      * Creates the PDF Document corresponding to the {@link VectorSource}, and
      * writes it to the provided {@link File}, using UTF-16 encoding due to the
-     * need to handle locale sensitive characters for the PDF Title and content.
+     * need to handle locale sensitive characters for the PDF Title and
+     * content.
      * <p>
      * Note that the Color Mode isn't used yet, until JFreePDF supports it.
      *
-     * @param file
-     *            The {@link File} destination for writing the PDF content
-     * @param component
-     *            The {@link VectorSource} AWT/Swing component to export to PDF
-     * @param title
-     *            The {@link String} to use as the PDF Document's title
-     * @param author
-     *            The {@link String} to use as the PDF Document's author
-     * @param pageWidth
-     *            The target page width, in points (1/72 inch)
-     * @param pageHeight
-     *            The target page height, in points (1/72 inch)
-     * @param colorMode
-     *            The {@link ColorMode} to use, compatible with PDF specs
-     * @param useVectorizedText
-     *            Set to {@code true} if Vectorized Text Mode is desired;
-     *            {@code false} otherwise (that is, if text is to be rendered as
-     *            strings, sometimes referred to as Basic Text Mode)
+     * @param file              The {@link File} destination for writing the PDF
+     *                          content
+     * @param component         The {@link VectorSource} AWT/Swing component to
+     *                          export to PDF
+     * @param title             The {@link String} to use as the PDF Document's
+     *                          title
+     * @param author            The {@link String} to use as the PDF Document's
+     *                          author
+     * @param pageWidth         The target page width, in points (1/72 inch)
+     * @param pageHeight        The target page height, in points (1/72 inch)
+     * @param colorMode         The {@link ColorMode} to use, compatible with
+     *                          PDF specs
+     * @param useVectorizedText Set to {@code true} if Vectorized Text Mode is
+     *                          desired; {@code false} otherwise (that is, if
+     *                          text is to be rendered as strings, sometimes
+     *                          referred to as Basic Text Mode)
      * @return The status of whether PDF Document creation succeeded or not
-     *
      * @since 1.0
      */
     public static boolean createDocument( final File file,
@@ -151,9 +147,11 @@ public class PdfReportUtilities {
         // overall system-neutrality and locale-sensitivity of text data. As
         // JFreePDF returns the entire file contents as a byte array, we must
         // use {@link BufferedOutputStream} instead of {@link FileWriter}.
-        try ( final FileOutputStream fileOutputStream = new FileOutputStream( file );
-                final BufferedOutputStream bufferedOutputStream =
-                                                                new BufferedOutputStream( fileOutputStream ) ) {
+        try ( final FileOutputStream fileOutputStream = new FileOutputStream(
+                file );
+              final BufferedOutputStream bufferedOutputStream =
+                      new BufferedOutputStream(
+                      fileOutputStream ) ) {
             // Write the PDF contents indirectly via Swing's paintComponent().
             fileSaved = createDocument( bufferedOutputStream,
                                         component,
@@ -177,27 +175,23 @@ public class PdfReportUtilities {
      * <p>
      * Note that the Color Mode isn't used yet, until JFreePDF supports it.
      *
-     * @param outputStream
-     *            The wrapped {@link OutputStream} for channeling the PDF
-     *            content
-     * @param component
-     *            The {@link VectorSource} AWT/Swing component to export to PDF
-     * @param title
-     *            The {@link String} to use as the PDF Document's title
-     * @param author
-     *            The {@link String} to use as the PDF Document's author
-     * @param pageWidth
-     *            The target page width, in points (1/72 inch)
-     * @param pageHeight
-     *            The target page height, in points (1/72 inch)
-     * @param colorMode
-     *            The {@link ColorMode} to use, compatible with PDF specs
-     * @param useVectorizedText
-     *            Set to {@code true} if Vectorized Text Mode is desired;
-     *            {@code false} otherwise (that is, if text is to be rendered as
-     *            strings, sometimes referred to as Basic Text Mode)
+     * @param outputStream      The wrapped {@link OutputStream} for channeling
+     *                          the PDF content
+     * @param component         The {@link VectorSource} AWT/Swing component to
+     *                          export to PDF
+     * @param title             The {@link String} to use as the PDF Document's
+     *                          title
+     * @param author            The {@link String} to use as the PDF Document's
+     *                          author
+     * @param pageWidth         The target page width, in points (1/72 inch)
+     * @param pageHeight        The target page height, in points (1/72 inch)
+     * @param colorMode         The {@link ColorMode} to use, compatible with
+     *                          PDF specs
+     * @param useVectorizedText Set to {@code true} if Vectorized Text Mode is
+     *                          desired; {@code false} otherwise (that is, if
+     *                          text is to be rendered as strings, sometimes
+     *                          referred to as Basic Text Mode)
      * @return The status of whether PDF Document creation succeeded or not
-     *
      * @since 1.0
      */
     public static boolean createDocument( final OutputStream outputStream,
@@ -225,8 +219,10 @@ public class PdfReportUtilities {
         document.setAuthor( author );
 
         // Create a new PDF Page, and add it to the PDF Document.
-        final Page page = document.createPage( new Rectangle2D.Double(
-                0.0d, 0.0d, pageWidth, pageHeight ) );
+        final Page page = document.createPage( new Rectangle2D.Double( 0.0d,
+                                                                       0.0d,
+                                                                       pageWidth,
+                                                                       pageHeight ) );
 
         // Get the Graphics Context wrapper for drawing the PDF content.
         final PDFGraphics2D pdfGraphics = page.getGraphics2D();
@@ -234,10 +230,12 @@ public class PdfReportUtilities {
         // Vectorize the text, to avoid missing fonts and to allow more
         // flexibility in how to work with text in downstream applications.
         final Object textRenderingHint = useVectorizedText
-            ? PDFHints.VALUE_DRAW_STRING_TYPE_VECTOR
-            : PDFHints.VALUE_DRAW_STRING_TYPE_STANDARD;
-        pdfGraphics.setRenderingHint(
-                PDFHints.KEY_DRAW_STRING_TYPE, textRenderingHint );
+                                         ?
+                                         PDFHints.VALUE_DRAW_STRING_TYPE_VECTOR
+                                         :
+                                         PDFHints.VALUE_DRAW_STRING_TYPE_STANDARD;
+        pdfGraphics.setRenderingHint( PDFHints.KEY_DRAW_STRING_TYPE,
+                                      textRenderingHint );
 
         // Calculate and apply a global transform for all the AWT transcoding
         // from source coordinates to PDF-oriented page coordinates.

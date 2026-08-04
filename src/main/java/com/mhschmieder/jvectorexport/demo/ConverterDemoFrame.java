@@ -35,16 +35,17 @@ import com.mhschmieder.jvectorexport.eps.EpsExportUtilities;
 import com.mhschmieder.jvectorexport.pdf.PdfReportUtilities;
 import com.mhschmieder.jvectorexport.svg.SvgExportUtilities;
 
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.EventQueue;
 import java.awt.HeadlessException;
 import java.io.File;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * {@code ConverterDemoFrame} is an example of a Swing-based window that can
@@ -78,47 +79,22 @@ import java.io.File;
  * panels and windows, or using JFXConverter to vectorize the JavaFX GUI layout
  * elements and graphics.
  *
- * @version 1.0
- *
  * @author Mark Schmieder
+ * @version 1.0
  */
 public final class ConverterDemoFrame extends JxFrame {
     /**
-     * Unique Serial Version ID for this class, to avoid class loader conflicts.
+     * Unique Serial Version ID for this class, to avoid class loader
+     * conflicts.
      */
     private static final long serialVersionUID = -6103053457616195619L;
 
     ////////////////// Main method for simple invocation /////////////////////
-
     /**
-     * This method instantiates this class as the main frame for an
-     * application. Note that it must ensure that the frame be instantiated on
-     * the AWT Event Queue, which is the only safe thread for GUI rendering.
-     *
-     * @param args
-     *            The command-line arguments for executing this class as the
-     *            main entry point for an application
-     *
-     * @since 1.0
-     */
-    public static void main( final String[] args ) {
-        // Create and display this frame as the main application window.
-        EventQueue.invokeLater( () -> {
-            final JFrame mainFrame =
-                                   new ConverterDemoFrame( "Test the Vector Graphics Export Feature", //$NON-NLS-1$
-                                                           true );
-            mainFrame.setVisible( true );
-            mainFrame.toFront();
-        } );
-    }
-
-    /**
-     * This {@link ConverterDemoTitledVectorizationPanel} mostly just contains the primary layout
-     * element, apart from the menus and tool bars.
+     * This {@link ConverterDemoTitledVectorizationPanel} mostly just contains
+     * the primary layout element, apart from the menus and tool bars.
      */
     protected ConverterDemoTitledVectorizationPanel converterDemoPanel;
-
-    //////////////////////////// Constructors ////////////////////////////////
 
     /**
      * This is the preferred constructor; it may be dangerous to call the other
@@ -127,16 +103,14 @@ public final class ConverterDemoFrame extends JxFrame {
      * The title in this case is the initial title, as this class manages the
      * dirty flag for the frame and modifies the frame title bar accordingly.
      *
-     * @param title
-     *            The initial title to use for the frame
-     * @param resizable
-     *            {@code true} if this frame is resizable by the user;
-     *            {@code false} otherwise
-     * @throws HeadlessException
-     *             If {@code GraphicsEnvironment.isHeadless()} returns
-     *             {@code true}
+     * @param title     The initial title to use for the frame
+     * @param resizable {@code true} if this frame is resizable by the user;
+     *                  {@code false} otherwise
+     * @throws HeadlessException If {@code GraphicsEnvironment.isHeadless()}
+     *                           returns {@code true}
      */
-    public ConverterDemoFrame( final String title, final boolean resizable )
+    public ConverterDemoFrame( final String title,
+                               final boolean resizable )
             throws HeadlessException {
         // Always call the superclass constructor first!
         super( title, resizable );
@@ -149,7 +123,7 @@ public final class ConverterDemoFrame extends JxFrame {
         }
     }
 
-    /////////////////////// Initialization methods ///////////////////////////
+    //////////////////////////// Constructors ////////////////////////////////
 
     /**
      * Initializes this frame in an encapsulated way that protects all
@@ -159,9 +133,12 @@ public final class ConverterDemoFrame extends JxFrame {
      */
     private void initFrame() {
         // Add quick-and-dirty buttons just to test the export feature.
-        final JButton epsExportButton = new JButton( "Export to EPS" ); //$NON-NLS-1$
-        final JButton pdfreportButton = new JButton( "Export to PDF" ); //$NON-NLS-1$
-        final JButton svgExportButton = new JButton( "Export to SVG" ); //$NON-NLS-1$
+        final JButton epsExportButton
+                = new JButton( "Export to EPS" ); //$NON-NLS-1$
+        final JButton pdfreportButton
+                = new JButton( "Export to PDF" ); //$NON-NLS-1$
+        final JButton svgExportButton
+                = new JButton( "Export to SVG" ); //$NON-NLS-1$
         final JPanel exportPanel = new JPanel();
         exportPanel.setLayout( new BorderLayout( 10, 10 ) );
         exportPanel.add( epsExportButton, BorderLayout.WEST );
@@ -228,21 +205,19 @@ public final class ConverterDemoFrame extends JxFrame {
         setForegroundFromBackground( Color.WHITE );
     }
 
-    //////////////////// Export Action handler methods ///////////////////////
+    /////////////////////// Initialization methods ///////////////////////////
 
     /**
-     * This method exports the contents of the current {@link JFrame} to an
-     * EPS Document written to the supplied {@link File}.
+     * This method exports the contents of the current {@link JFrame} to an EPS
+     * Document written to the supplied {@link File}.
      *
-     * @param file
-     *            The File to use for the EPS Export
-     * @param title
-     *            The {@link String} to use as the EPS Document's title
+     * @param file  The File to use for the EPS Export
+     * @param title The {@link String} to use as the EPS Document's title
      * @return {@code true} if the export succeeded; {@code false} if it failed
-     *
      * @since 1.0
      */
-    public boolean exportToEps( final File file, final String title ) {
+    public boolean exportToEps( final File file,
+                                final String title ) {
         // Sync the EPS-exportable Panel's EPS Title with the new one.
         converterDemoPanel.setTitle( title );
 
@@ -257,25 +232,27 @@ public final class ConverterDemoFrame extends JxFrame {
         // either be queried per export action, or grabbed from the current Page
         // Setup attributes. There are no limits on allowed values; units are
         // points (1/72 inch) and we default to North American Letter size here.
-        final boolean fileSaved = EpsExportUtilities
-                .createDocument( file, converterDemoPanel, title, creator );
+        final boolean fileSaved = EpsExportUtilities.createDocument( file,
+                                                                     converterDemoPanel,
+                                                                     title,
+                                                                     creator );
 
         return fileSaved;
     }
 
+    //////////////////// Export Action handler methods ///////////////////////
+
     /**
-     * This method exports the contents of the current {@link JFrame} to an
-     * SVG Document written to the supplied {@link File}.
+     * This method exports the contents of the current {@link JFrame} to an SVG
+     * Document written to the supplied {@link File}.
      *
-     * @param file
-     *            The File to use for the SVG Export
-     * @param title
-     *            The {@link String} to use as the SVG Document's title
+     * @param file  The File to use for the SVG Export
+     * @param title The {@link String} to use as the SVG Document's title
      * @return {@code true} if the export succeeded; {@code false} if it failed
-     *
      * @since 1.0
      */
-    public boolean exportToSvg( final File file, final String title ) {
+    public boolean exportToSvg( final File file,
+                                final String title ) {
         // Sync the SVG-exportable Panel's SVG Title with the new one.
         converterDemoPanel.setTitle( title );
 
@@ -287,25 +264,24 @@ public final class ConverterDemoFrame extends JxFrame {
         // either be queried per export action, or grabbed from the current Page
         // Setup attributes. There are no limits on allowed values; units are
         // points (1/72 inch) and we default to North American Letter size here.
-        final boolean fileSaved = SvgExportUtilities
-                .createDocument( file, converterDemoPanel, title );
+        final boolean fileSaved = SvgExportUtilities.createDocument( file,
+                                                                     converterDemoPanel,
+                                                                     title );
 
         return fileSaved;
     }
 
     /**
-     * This method exports the contents of the current {@link JFrame} to a
-     * PDF Document written to the supplied {@link File}.
+     * This method exports the contents of the current {@link JFrame} to a PDF
+     * Document written to the supplied {@link File}.
      *
-     * @param file
-     *            The File to use for the PDF Export
-     * @param title
-     *            The {@link String} to use as the SVG Document's title
+     * @param file  The File to use for the PDF Export
+     * @param title The {@link String} to use as the SVG Document's title
      * @return {@code true} if the export succeeded; {@code false} if it failed
-     *
      * @since 1.0
      */
-    public boolean exportToPdf( final File file, final String title ) {
+    public boolean exportToPdf( final File file,
+                                final String title ) {
         // Sync the PDF-exportable Panel's PDF Title with the new one.
         converterDemoPanel.setTitle( title );
 
@@ -320,20 +296,19 @@ public final class ConverterDemoFrame extends JxFrame {
         // either be queried per export action, or grabbed from the current Page
         // Setup attributes. There are no limits on allowed values; units are
         // points (1/72 inch) and we default to North American Letter size here.
-        return PdfReportUtilities
-                .createDocument( file, converterDemoPanel, title, author );
+        return PdfReportUtilities.createDocument( file,
+                                                  converterDemoPanel,
+                                                  title,
+                                                  author );
     }
-
-    //////////////////////// XFrame method overrides /////////////////////////
 
     /**
      * This method sets the specified background color for the layout hierarchy,
      * and where appropriate, uses it to set an appropriate foreground color to
      * complement for text-based components as well as line graphics.
      *
-     * @param backColor
-     *            The current background color to apply to the layout hierarchy
-     *
+     * @param backColor The current background color to apply to the layout
+     *                  hierarchy
      * @since 1.0
      */
     @Override
@@ -343,5 +318,27 @@ public final class ConverterDemoFrame extends JxFrame {
 
         // Forward this method to the subcomponents.
         converterDemoPanel.setForegroundFromBackground( backColor );
+    }
+
+    //////////////////////// XFrame method overrides /////////////////////////
+
+    /**
+     * This method instantiates this class as the main frame for an application.
+     * Note that it must ensure that the frame be instantiated on the AWT Event
+     * Queue, which is the only safe thread for GUI rendering.
+     *
+     * @param args The command-line arguments for executing this class as the
+     *             main entry point for an application
+     * @since 1.0
+     */
+    public static void main( final String[] args ) {
+        // Create and display this frame as the main application window.
+        EventQueue.invokeLater( () -> {
+            final JFrame mainFrame = new ConverterDemoFrame(
+                    "Test the Vector Graphics Export Feature", //$NON-NLS-1$
+                    true );
+            mainFrame.setVisible( true );
+            mainFrame.toFront();
+        } );
     }
 }

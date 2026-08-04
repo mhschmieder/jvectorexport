@@ -30,9 +30,5 @@
  */
 /**
  * This package contains a demo app for how to use the jvectorexport Library.
- *
- * @version 1.0
- *
- * @author Mark Schmieder
  */
 package com.mhschmieder.jvectorexport.demo;

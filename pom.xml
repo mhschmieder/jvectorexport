@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>jxlab</artifactId>
         <groupId>com.mhschmieder</groupId>
@@ -14,7 +16,9 @@
 
     <name>jvectorexport</name>
     <url>https://github.com/mhschmieder/jvectorexport</url>
-    <description>A toolkit for converting Java AWT based graphics to various vector graphics output formats such as EPS, SVG and PDF.</description>  
+    <description>A toolkit for converting Java AWT based graphics to various
+        vector graphics output formats such as EPS, SVG and PDF.
+    </description>
 
     <licenses>
         <license>
@@ -26,8 +30,11 @@
 
     <scm>
         <url>https://github.com/mhschmieder/jvectorexport</url>
-        <connection>scm:git:git://github.com/mhschmieder/jvectorexport.git</connection>
-        <developerConnection>scm:git:git@github.com:mhschmieder/jvectorexport.git</developerConnection>
+        <connection>scm:git:git://github.com/mhschmieder/jvectorexport.git
+        </connection>
+        <developerConnection>
+            scm:git:git@github.com:mhschmieder/jvectorexport.git
+        </developerConnection>
     </scm>
 
     <developers>
@@ -86,7 +93,7 @@
                         <arg>-Xlint:deprecation</arg>
                         <arg>-Xlint:unchecked</arg>
                     </compilerArgs>
-                    <encoding>${project.build.sourceEncoding}</encoding>               
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
             <plugin>

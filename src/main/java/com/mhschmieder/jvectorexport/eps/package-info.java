@@ -29,12 +29,8 @@
  * Project: https://github.com/mhschmieder/jvectorexport
  */
 /**
- * This package contains the jvectorexport Library's export protocols (via
- * basic and advanced export interfaces), and utilities for wrapping output
- * writers with EPS as the targeted device.
- *
- * @version 1.0
- *
- * @author Mark Schmieder
+ * This package contains the jvectorexport Library's export protocols (via basic
+ * and advanced export interfaces), and utilities for wrapping output writers
+ * with EPS as the targeted device.
  */
 package com.mhschmieder.jvectorexport.eps;
