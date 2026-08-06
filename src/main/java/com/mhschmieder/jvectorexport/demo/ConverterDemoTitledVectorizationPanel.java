@@ -58,6 +58,7 @@ import javax.swing.JPanel;
  */
 public final class ConverterDemoTitledVectorizationPanel
         extends JxTitledVectorizationPanel {
+
     /**
      * Unique Serial Version ID for this class, to avoid class loader
      * conflicts.

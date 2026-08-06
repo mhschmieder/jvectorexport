@@ -83,6 +83,7 @@ import javax.swing.JPanel;
  * @version 1.0
  */
 public final class ConverterDemoFrame extends JxFrame {
+
     /**
      * Unique Serial Version ID for this class, to avoid class loader
      * conflicts.
